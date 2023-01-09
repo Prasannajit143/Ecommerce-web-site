@@ -1,0 +1,46 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} Contact Us {% endblock %}
+{% block body %} 
+<div class="container my-3">
+<h2>Contact Us</h2>
+<form active="#" method="POST" id="contactus">{% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" name="name" class="form-control" placeholder="Enter Your Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" name="Email" class="form-control" placeholder="Enter Your Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Phone No.</label>
+      <input type="text" name="Phone" class="form-control" placeholder="Enter Your Number" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+
+    
+
+    <div class="form-floating">
+        <label for="exampleInputEmail1" class="form-label">How May We Help You?</label>
+        <textarea class="form-control" name="Text"  id="floatingTextarea"></textarea>
+        
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary my-2">Submit</button>
+  </form>
+</div>
+{% endblock %}
+
+{% block JS %} 
+<script>
+  {% if pk %}
+  alert("Thanks for contacting us, We will get back to you soon")
+  document.location = "/shop/contactUs/"
+  {% endif %}
+</script>
+
+{% endblock %}
+
